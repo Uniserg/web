@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        a = ['AMD', 'Intel', 'Apple', 'Microsoft', 'Google', 'Oracle']
+
+        for (const x of [[...a].sort(), a]) {
+            document.write('<ul>')
+            for (const i of x) {
+                document.write('<li>' + i + '</li>')
+            }
+            document.write('</ul>')
+        }
+    </script>
+</body>
+</html>
