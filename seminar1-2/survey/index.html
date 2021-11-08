@@ -1,64 +1,69 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css"/>
-    <link rel="shortcut icon" href="../icons/films.png" type="image/png">
-    <title>Жанры фильмов и сериалов</title>
-</head>
-<body>
-    <h1 style="font-family: Consolas">Жанры сериалов и фильмов</h1>
-    <div id="main">
-        <h3 style="font-family: Consolas">Опросник для получения информации о наиболее популярных жанрах сериалов и фильмов</h3>
-        <div class="item">
-            <label for="name">Имя:</label>
-            <input id="name" type="text" size="50" placeholder="Введите имя">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style/style.css">
+        <title> Опрос по играм </title>
+    </head>
+    <body>
+        <h1 align="center"> Компьютерные игры </h1>
+        <div class="form" style="background:#2c2d30;">
+            <p class="pos"> Выясняем, какая игра является самой популярная на сегодняшний день. </p>
+
+            <div>
+                <p class="pos1">
+                    <label class="form-label">
+                        Имя: <input class="chbox1" type="text" placeholder="Введите Ваше имя">
+                    </label>
+                </p>
+                <p class="pos1">
+                    <label class="form-label">
+                        Фамилия: <input class="chbox1" type="text" placeholder="Введите Вашу фамилию">
+                    </label>
+                </p>
+                <p class="pos1">
+                    <label class="form-label">
+                        Лет: <input class="chbox1" type="number" placeholder="Сколько Вам лет?">
+                    </label>
+                </p>
+
+                <p class="pos3">
+                    <label class="form-label">Предпочитаемая ОС: </label>
+                    <select aria-label="Default select example">
+                        <option selected> Windows </option>
+                        <option> Linux </option>
+                        <option> Mac OS </option>
+                    </select>
+                </p>
+
+            </div>
+            <br><br><br>
+
+            <div>
+                <p class="pos2_1">Ваш любимый жанр?</p>
+                <p class="pos2"><input type="radio" name="genre" value="action1"> Стратегии </p>
+                <p class="pos2"><input type="radio" name="genre" value="action2"> Экшн </p>
+                <p class="pos2"><input type="radio" name="genre" value="action3"> Шутеры </p>
+                <p class="pos2"><input type="radio" name="genre" value="action4"> MMO RPG</p>
+            </div>
+
+            <div class="pos2_1">
+                За какую цену вы готовы купить игру?
+                <p class="pos2 text-info"><input type="checkbox" name="price" value="b"> Бесплатные</p>
+                <p class="pos2 text-info"><input type="checkbox" name="price" value="b"> До 100 руб.</p>
+                <p class="pos2 text-info"><input type="checkbox" name="price" value="b"> 500 руб.</p>
+                <p class="pos2 text-info"><input type="checkbox" name="price" value="c"> 1500 руб.</p>
+                <p class="pos2 text-info"><input type="checkbox" name="price" value="d"> 3000 руб.</p>
+                <p class="pos2 text-info"><input type="checkbox" name="price" value="e"> Больше 3000 руб.</p>
+            </div>
+
+            <div class="pos2" style="color: deepskyblue">
+                <label class="form-label text-primary" style="vertical-align: top">Напишите ваши любимые игры:<br>
+                    <textarea class="areabx" cols="37" placeholder="Выши любимые игры"></textarea>
+                </label>
+            </div>
+            <br>
+            <p class="pos2"><button class="btn btn-primary">Отправить</button></p>
         </div>
-        <div class="item">
-            <label for="surname">Фамилия:</label>
-            <input id="surname" type="text" size="50" placeholder="Введите фамилию">
-        </div>
-        <div class="item">
-            <label for="email">E-mail:</label>
-            <input id="email" type="email" placeholder="Введите email">
-        </div>
-        <div class="item">
-            <label for="sex">Пол:</label>
-            <span id="sex">
-                <input id="M" name="sex" type="radio">
-                <label for="M">Мужской</label>
-                <input id="W" name="sex" type="radio">
-                <label for="W">Женский</label>
-            </span>
-        </div>
-        <div class="item">
-            <label for="age">Возраст(лет):</label>
-            <input id="age" type="number" size="3" placeholder="Введите возраст">
-        </div>
-        <div class="item">
-            <label for="genre">Любимый жанр:</label>
-            <select id="genre">
-                <option>Боевик</option>
-                <option>Вестерн</option>
-                <option>Драма</option>
-                <option>Комедия</option>
-                <option>Триллер</option>>
-                <option>Мелодрама</option>
-                <option>Ужасы</option>
-                <option>Пеплум</option>
-                <option>Нуар</option>
-                <option>Семейный</option>
-            </select>
-        </div>
-        <div class="item">
-            <label for="pegi">18+:</label>
-            <input id="pegi" type="checkbox">
-        </div>
-        <div class="item">
-            <label for="elements">Список любимых фильмов и сериалов:</label>
-            <textarea id="elements" rows="5" cols="50" placeholder="Введите названия"></textarea>
-        </div>
-        <button class="item" type="submit">Отправить</button>
-    </div>
-</body>
+    </body>     
 </html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
+    <title> Опрос по играм </title>
+</head>
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand">Игровой портал</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Возможности</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Статистика</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h1>Наиболее популярные игры на сегодня</h1><br>
+
+    <div class="container">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/1.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/2.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/3.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"  data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Предыдущий</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"  data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Следующий</span>
+            </button>
+        </div>
+    </div>
+
+    <h1> Компьютерные игры </h1>
+    <form style="background:#2c2d30; width: fit-content; margin: auto; text-align: center; padding: 20px">
+        <p class="headerGoal"> Выясняем, какая игра является самой популярная на сегодняшний день. </p>
+        <div class="question-part">
+
+            <p>
+                <label class="label-input">
+                    <input class="chbox" type="text" placeholder="Введите Ваше имя">
+                </label>
+            </p>
+            <p>
+                Фамилия:
+                <label class="label-input">
+                    <input class="chbox" type="text" placeholder="Введите Вашу фамилию">
+                </label>
+            </p>
+            <p>
+                <label class="form-label">
+                    Лет: <input class="chbox" type="number" placeholder="Сколько Вам лет?">
+                </label>
+            </p>
+
+            <p>
+                <label class="form-label">Предпочитаемая ОС: </label>
+                <select aria-label="Default select example">
+                    <option selected> Windows </option>
+                    <option> Linux </option>
+                    <option> Mac OS </option>
+                </select>
+            </p>
+
+        </div>
+
+        <div class="question-part">
+            <p class="question-text">Ваш любимый жанр?</p>
+            <p class="genre"><input type="radio" name="genre" value="action1"> Стратегии </p>
+            <p class="genre"><input type="radio" name="genre" value="action2"> Экшн </p>
+            <p class="genre"><input type="radio" name="genre" value="action3"> Шутеры </p>
+            <p class="genre"><input type="radio" name="genre" value="action4"> MMO RPG</p>
+        </div>
+
+
+        <div class="question-part">
+            <p class="question-text">За какую цену вы готовы купить игру?</p>
+
+            <p class="price"><input type="checkbox" name="price" value="a"> Бесплатные</p>
+            <p class="price"><input type="checkbox" name="price" value="b"> До 100 руб.</p>
+            <p class="price"><input type="checkbox" name="price" value="c"> 500 руб.</p>
+            <p class="price"><input type="checkbox" name="price" value="d"> 1500 руб.</p>
+            <p class="price"><input type="checkbox" name="price" value="e"> 3000 руб.</p>
+            <p class="price"><input type="checkbox" name="price" value="f"> Больше 3000 руб.<br></p>
+        </div>
+
+        <div class="question-part">
+            <div class="question-text">
+                <p class="question-text">Напишите ваши любимые игры:</p>
+                <label>
+                    <textarea cols="37" placeholder="Ваши любимые игры"></textarea>
+                </label>
+            </div>
+        </div>
+
+        <button class="btn btn-primary">Отправить</button>
+    </form>
+
+</body>
+</html>
