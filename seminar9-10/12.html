@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12</title>
+</head>
+<body>
+    <input id="files" type="file"/>
+    <script>
+        var control = document.getElementById("files");
+        control.addEventListener("change", function() {
+            let files = control.files;
+
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                let contents = event.target.result;
+                let jsonObj = JSON.parse(contents);
+                let centuries = {}
+
+                for (const el of jsonObj) {
+                    let century = Math.ceil(el.died / 100);
+                    if (centuries[century] === undefined) {
+                        centuries[century] = [0, 0];
+                    }
+                    centuries[century][0] += el.died - el.born;
+                    centuries[century][1] ++;
+                }
+
+                for (const century in centuries) {
+                    let a = centuries[century];
+                    centuries[century] = a[0] / a[1];
+                }
+
+                console.log(centuries);
+            }
+            reader.readAsText(files[0]);
+        }, false);
+    </script>
+</body>
+</html>

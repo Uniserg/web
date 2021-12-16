@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7</title>
+</head>
+<body>
+    <script>
+
+        function reverseArray(arr) {
+            let newArr = new Array(arr.length);
+
+            for (let i = 0; i < arr.length; i++) {
+                newArr[i] = arr[arr.length - 1 - i];
+            }
+            return newArr;
+        }
+
+        function reverseArrayInPlace(arr) {
+            for (let i = 0; i < arr.length / 2; i++) {
+                let t = arr[i];
+                arr[i] = arr[arr.length - 1 - i];
+                arr[arr.length - 1 - i] = t;
+            }
+            return arr
+        }
+
+        a = [1, 2, 3, 4]
+        console.log(reverseArray(a));
+        console.log(reverseArrayInPlace(a));
+
+    </script>
+</body>
+</html>

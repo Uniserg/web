@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5</title>
+</head>
+<body>
+  <script>
+      function countBs(str) {
+          let countB = 0;
+          for (const el of str) {
+              if (el === 'B') {
+                  countB ++;
+              }
+          }
+          return countB;
+      }
+
+      function countChar(str, ch) {
+          let countCh = 0;
+          for (const el of str) {
+              if (el === ch) {
+                  countCh ++;
+              }
+          }
+          return countCh;
+      }
+
+      s = 'Hello, BOB!';
+      console.log(countChar(s, 'l'));
+      console.log(countBs(s));
+  </script>
+</body>
+</html>

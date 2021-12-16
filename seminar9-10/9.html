@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9</title>
+</head>
+<body>
+ <script>
+     function deepEqual(a, b) {
+
+         if (typeof a === 'object' && typeof b === 'object') {
+             if (a == null && b == null) {
+                 return true;
+             } else {
+                 let keysA = Object.keys(a);
+                 let keysB = Object.keys(b);
+
+                 if (keysA.length === keysB.length) {
+                     for (let i = 0; i < keysA.length; i++) {
+                         if (keysA[i] !== keysB[i] || !deepEqual(a[keysA[i]], b[keysA[i]])) {
+                             return false;
+                         }
+                     }
+                 } else {
+                     return false;
+                 }
+             }
+             return true;
+         } else {
+             return a === b;
+         }
+     }
+
+     let a = {
+         'listA':[2, 2, [2, 3]],
+         'listB': [1, 2, 3],
+         'listC': {1: {null: null}}
+     };
+
+     let b = {
+         'listA':[2, 2, [2, 3]],
+         'listB': [1, 2, 3],
+         'listC': {1: {null: null}}
+     };
+
+     console.log(deepEqual(a, b));
+ </script>
+</body>
+</html>

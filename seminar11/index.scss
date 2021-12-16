@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "Calibri", serif;
+  font-size: 20px;
+
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    td {
+      text-align: center;
+      padding: 5px;
+    }
+
+    thead {
+      height: 40px;
+      border-bottom: 2px solid #ff5454;
+      font-weight: bold;
+      background: #2e39be;
+      color: white;
+
+      td {
+        padding: 10px;
+      }
+    }
+
+    tbody {
+      tr {
+        border-left: none;
+        border-right: none;
+
+        &:nth-of-type(even) {
+          background: #ffc1c1;
+        }
+      }
+    }
+  }
+
+  form {
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      text-align: center;
+    }
+
+    select, button {
+      border: 2px solid #ff5454;
+      background: #ffc1c1;
+      outline: none;
+    }
+
+    label, select, button {
+      margin: 5px 0;
+    }
+  }
+}
+

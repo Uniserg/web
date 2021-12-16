@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11</title>
+</head>
+<body>
+    <input id="files" type="file"/>
+
+    <script>
+        function average(array) {
+            function plus(a, b) { return a + b; }
+            return array.reduce(plus) / array.length;
+        }
+
+        var control = document.getElementById("files");
+        control.addEventListener("change", function() {
+            let files = control.files;
+
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                let contents = event.target.result;
+                let jsonObj = JSON.parse(contents);
+
+                let byName = {};
+                let n = 0;
+
+                for (let i = 0; i < jsonObj.length; i++) {
+                    byName[jsonObj[i].name] = i;
+                }
+
+                for (const el of jsonObj) {
+                    if (byName[el.mother] !== undefined) {
+                        n++;
+                    }
+                }
+
+                let yearDiff = new Array(n);
+
+                let i = 0;
+
+                for (const el of jsonObj) {
+                    let mother = byName[el.mother];
+                    if (mother !== undefined) {
+                        yearDiff[i] = el.born - jsonObj[mother].born;
+                        i++;
+                    }
+                }
+                console.log(average(yearDiff));
+            }
+
+            reader.readAsText(files[0]);
+        }, false);
+    </script>
+</body>
+</html>

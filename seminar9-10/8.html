@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8</title>
+</head>
+<body>
+    <script>
+
+        let list = {
+            value: 1,
+            rest: {
+                value: 2,
+                rest: {
+                    value: 3,
+                    rest: null
+                }
+            }
+        }
+
+
+        function prepend(val, list) {
+            return {value: val, rest: list}
+        }
+
+        function arrayToList(arr) {
+            list = null
+
+            for (let i = arr.length - 1; i >= 0; i--) {
+                list = prepend(arr[i], list);
+            }
+
+            return list;
+        }
+
+        function nth(k, list) {
+            if (k === 0) {
+                return list.value;
+            } else if (list.rest == null){
+                return undefined;
+            }
+
+            return nth(k - 1, list.rest);
+        }
+
+        function listToArray(list) {
+            let arr = Array(list.length);
+            let i = 0;
+            let cur = list
+
+            while (true) {
+                arr[i++] = cur.value;
+                cur = cur.rest
+
+                if (cur == null)
+                    break
+            }
+            return arr;
+        }
+
+        let arr = listToArray(list);
+
+        console.log(arr);
+        console.log(arrayToList(arr));
+        console.log(nth(3, list));
+    </script>
+</body>
+</html>
